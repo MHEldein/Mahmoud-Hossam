@@ -3,6 +3,8 @@ package PagesLibrary;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,7 +41,9 @@ public class ResultsPage {
     }
 
     public String getWordInResultBox(){
-        return driver.findElement(resultTextBox).getAttribute("value")  ;
+        WebDriverWait wait = new WebDriverWait(driver, 3);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(resultTextBox));
+        return driver.findElement(resultTextBox).getAttribute("value") ;
     }
 
     public String getUrl(){
