@@ -10,9 +10,8 @@ import java.util.concurrent.TimeUnit;
 
 public class ResultsPage {
     private WebDriver driver;
-    private By images = By.xpath("//body/div[@id='main']/div[@id='cnt']/div[@id='top_nav']/div[@id='hdtb']/div[@id='pTwnEc']/div[@id='hdtb-msb']/div[1]/div[1]/div[2]/a[1]");
-    private By news = By.xpath("//body/div[@id='main']/div[@id='cnt']/div[@id='top_nav']/div[@id='hdtb']/div[@id='pTwnEc']/div[@id='hdtb-msb']/div[1]/div[1]/div[3]/a[1]");
-    private By videos = By.xpath("//body/div[@id='main']/div[@id='cnt']/div[@id='top_nav']/div[@id='hdtb']/div[@id='pTwnEc']/div[@id='hdtb-msb']/div[1]/div[1]/div[4]/a[1]");
+    private By imagesIcon = By.xpath("//body[1]/c-wiz[1]/div[1]/header[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[3]/div[1]/span[1]");
+    private By images = By.linkText("صور");
     private By resultTextBox = By.xpath("/html[1]/body[1]/div[4]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/input[1]");
     private By clear = By.xpath("//body/div[@id='searchform']/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]");
     private By searchIcon = By.xpath("//body/div[@id='searchform']/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]");
@@ -28,12 +27,8 @@ public class ResultsPage {
         driver.findElement(images).click();
     }
 
-    public void navigateToNews(){
-        driver.findElement(news).click();
-    }
-
-    public void navigateToVideos(){
-        driver.findElement(videos).click();
+    public boolean checkImagesTab(){
+       return driver.findElement(imagesIcon).isDisplayed();
     }
 
     public boolean resultTextBoxExist(){
@@ -41,13 +36,26 @@ public class ResultsPage {
     }
 
     public String getWordInResultBox(){
-        WebDriverWait wait = new WebDriverWait(driver, 3);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(resultTextBox));
-        return driver.findElement(resultTextBox).getAttribute("value") ;
+        return driver.findElement(resultTextBox).getAttribute("value");
     }
 
     public String getUrl(){
         return driver.getCurrentUrl();
     }
 
+    public void clearSearch(){
+        driver.findElement(clear).click();
+    }
+
+    public ResultsPage resultPageSearch(String text){
+        driver.findElement(resultTextBox).sendKeys(text);
+        this.pressSearchIcon();
+        return new ResultsPage(driver);
+    }
+
+    public void pressSearchIcon(){
+        driver.findElement(searchIcon).click();
+    }
 }

@@ -70,10 +70,9 @@ public class SearchPage {
 
     public ResultsPage chooseFromSuggestion(int elementNumber){
         List<WebElement> elements = new WebDriverWait(driver, 10).until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//ul[@role='listbox']//li/descendant::span"), 0));
-        for(int i=0;i<elements.size();i++) {
+        for(int i=0;i<elements.size();i++)
             elements.get(elementNumber).click();
-        }
-        return new ResultsPage(driver);
+            return new ResultsPage(driver);
     }
 
     public String getSearchText(){

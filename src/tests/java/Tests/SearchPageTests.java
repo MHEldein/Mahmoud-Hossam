@@ -7,7 +7,7 @@ import net.bytebuddy.build.ToStringPlugin;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
-public class SearchTests extends BaseTest {
+public class SearchPageTests extends BaseTest {
     private ResultsPage resultsPage;
 
     @Test(priority = 1)

@@ -2,7 +2,7 @@
 <suite name = "Parallel Testing Suite">
     <test name = "Parallel Tests">
         <classes>
-            <class name = "Tests.SearchTests">
+            <class name = "Tests.SearchPageTests">
 
             </class>
         </classes>
