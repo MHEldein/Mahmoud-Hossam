@@ -2,9 +2,8 @@
 <suite name = "Parallel Testing Suite">
     <test name = "Parallel Tests">
         <classes>
-            <class name = "Tests.SearchPageTests">
-
-            </class>
+            <class name = "Tests.SearchPageTests"></class>
+            <class name="Tests.ResultsPageTests"></class>
         </classes>
     </test>
 </suite>

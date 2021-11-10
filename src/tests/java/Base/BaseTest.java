@@ -4,19 +4,15 @@ import PagesLibrary.SearchPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-
-import java.security.PublicKey;
 
 public class BaseTest {
 
-    private WebDriver driver;
     protected SearchPage searchPage;
+    private WebDriver driver;
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver.get("http://www.google.com");
@@ -25,7 +21,7 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 
