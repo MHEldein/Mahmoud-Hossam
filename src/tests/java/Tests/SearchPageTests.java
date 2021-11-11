@@ -69,7 +69,7 @@ public class SearchPageTests extends BaseTest {
     }
 
     @Test(priority = 8)
-    public void verifyChangeLanguage() throws  InterruptedException {
+    public void verifyChangeLanguage() throws  InterruptedException   {
         String currentLang = searchPage.getLanguageText();
         searchPage.changeLanguage();
         String langAfterChange = searchPage.getLanguageText();
