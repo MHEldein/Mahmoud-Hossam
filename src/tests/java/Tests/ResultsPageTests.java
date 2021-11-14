@@ -17,14 +17,14 @@ public class ResultsPageTests extends BaseTest {
         assertTrue(resultsPage.checkImagesTab());
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void verifyClearSearchInResultPage() throws InterruptedException {
         resultsPage = searchPage.search("facebook");
         resultsPage.clearSearch();
         assertTrue(resultsPage.getWordInResultBox().isEmpty());
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void verifyResearchInResultPage() throws InterruptedException {
         resultsPage = searchPage.search("f");
         resultsPage.clearSearch();

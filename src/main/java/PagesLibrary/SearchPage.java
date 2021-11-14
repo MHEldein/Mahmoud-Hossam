@@ -13,7 +13,7 @@ public class SearchPage {
     private final WebDriver driver;
     private final By searchTextBox = By.xpath("//body/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1]");
     private final By deleteTextIcon = By.xpath("//body/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]");
-    private final By searchButton = By.xpath("//body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[3]/center[1]/input[1]");
+    private final By searchButton = By.cssSelector("div.L3eUgb:nth-child(2) div.o3j99.ikrT4e.om7nvf:nth-child(3) div:nth-child(1) div.A8SBwf:nth-child(1) div.FPdoLc.lJ9FBc:nth-child(4) center:nth-child(1) > input.gNO89b");
     private final By feelingLuckyButton = By.xpath("//body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[3]/center[1]/input[2]");
     private final By languageButton = By.cssSelector("div.L3eUgb:nth-child(2) div.o3j99.qarstb:nth-child(4) div.vcVZ7d:nth-child(2) div:nth-child(2) > a:nth-child(1)");
     private final By googleHomeIcon = By.xpath("//body/div[1]/div[2]/div[1]/img[1]");
