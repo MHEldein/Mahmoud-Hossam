@@ -9,7 +9,9 @@ public class ResultsPage {
     private final WebDriver driver;
     private final By imagesIcon = By.xpath("//body[1]/c-wiz[1]/div[1]/header[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[3]/div[1]/span[1]");
     private final By images = By.linkText("صور");
-    private final By resultTextBox = By.cssSelector("body.srp:nth-child(2) div.CvDJxb:nth-child(9) div.Q3DXx.yIbDgf form.tsf div.A8SBwf:nth-child(1) div.RNNXgb div.SDkEP div.a4bIc > input.gLFyf.gsfi:nth-child(3)");
+    private final By resultTextBox = By.className("gLFyf");
+
+    private final By resultIcon = By.className("YTDezd");
     private final By clear = By.xpath("//body/div[@id='searchform']/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]");
     private final By searchIcon = By.xpath("//body/div[@id='searchform']/div[2]/form[1]/div[1]/div[1]/div[2]/button[1]");
     private final By moreMenu = By.xpath("//body/div[@id='main']/div[@id='cnt']/div[@id='top_nav']/div[@id='hdtb']/div[@id='pTwnEc']/div[@id='hdtb-msb']/div[1]/span[1]/g-popup[1]/div[1]/div[1]");
@@ -20,8 +22,9 @@ public class ResultsPage {
         this.driver = driver;
     }
 
-    public void navigateToImages() {
+    public ImagesResultsPages navigateToImages() {
         driver.findElement(images).click();
+        return new ImagesResultsPages(driver);
     }
 
     public boolean checkImagesTab() {
@@ -29,7 +32,7 @@ public class ResultsPage {
     }
 
     public boolean resultTextBoxExist() {
-        return driver.findElement(resultTextBox).isDisplayed();
+        return driver.findElement(resultIcon).isDisplayed();
     }
 
     public String getWordInResultBox() {

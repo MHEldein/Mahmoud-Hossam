@@ -9,13 +9,15 @@ import static org.testng.Assert.assertTrue;
 
 public class ResultsPageTests extends BaseTest {
     private ResultsPage resultsPage;
-
+    //private ImagesResultsTests imagesResults;
     @Test(priority = 1)
     public void verifyUserNavigationToImages() throws InterruptedException {
         resultsPage = searchPage.search("facebook");
         resultsPage.navigateToImages();
         assertTrue(resultsPage.checkImagesTab());
     }
+
+
 
     @Test(priority = 2)
     public void verifyClearSearchInResultPage() throws InterruptedException {

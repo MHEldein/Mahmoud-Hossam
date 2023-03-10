@@ -9,6 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class SearchPageTests extends BaseTest {
     private ResultsPage resultsPage;
+    //private ImagesResults imagesResults;
 
     @Test(priority = 1)
     public void verifySearchTextBoxExist() {
@@ -20,6 +21,18 @@ public class SearchPageTests extends BaseTest {
         resultsPage = searchPage.search("anything");
         assertTrue(resultsPage.resultTextBoxExist(), "Result Text Box Not Exist");
 
+    }
+
+   // @Test
+    //public void test(){
+      //  resultsPage = searchPage.search("anything");
+        //imagesResults = resultsPage.navigateToImages();
+        //imagesResults.checkFirstResultExists();
+    //}
+
+    @Test
+    public void testSearchPage(){
+        resultsPage = searchPage.search("kosomak");
     }
 
     @Test(priority = 3)

@@ -32,6 +32,29 @@
             <version>7.4.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>moe.pine</groupId>
+            <artifactId>reactor-interruptible</artifactId>
+            <version>0.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>moe.pine</groupId>
+            <artifactId>reactor-interruptible</artifactId>
+            <version>0.1.1</version>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>moe.pine</groupId>
+            <artifactId>reactor-interruptible</artifactId>
+            <version>0.1.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>moe.pine</groupId>
+            <artifactId>reactor-interruptible</artifactId>
+            <version>0.1.1</version>
+            <scope>runtime</scope>
+        </dependency>
 
     </dependencies>
 </project>
